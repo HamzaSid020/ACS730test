@@ -3,6 +3,7 @@
 
 alias tf = terraform
 tf init
+tf validate
 tf apply --auto-approve
 
 
