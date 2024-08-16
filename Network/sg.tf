@@ -41,7 +41,8 @@ resource "aws_security_group" "web_sg" {
     protocol        = "tcp"
     security_groups = [aws_security_group.bastion_sg.id]
   }
-  # To Allow SSH from Ansible, hardcoding it from the Cloud9 instance public IP  ingress {
+  # To Allow SSH from Ansible, hardcoding it from the Cloud9 instance public IP  
+  ingress {
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
