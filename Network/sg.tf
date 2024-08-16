@@ -43,6 +43,14 @@ resource "aws_security_group" "web_sg" {
     security_groups = [aws_security_group.bastion_sg.id]
   }
 
+  # To Allow SSH from Ansible, hardcoding it from the Cloud9 instance public IP
+  ingress {
+    from_port       = 22
+    to_port         = 22
+    protocol        = "tcp"
+    cidr_blocks = ["3.238.200.186/32"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
