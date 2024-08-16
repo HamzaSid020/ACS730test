@@ -25,7 +25,7 @@ resource "aws_security_group" "bastion_sg" {
 # Web Server Security Group
 resource "aws_security_group" "web_sg" {
   vpc_id = aws_vpc.prod_vpc.id
-  description = "Allow HTTP from ALB and SSH from Bastion"
+  description = "Allow HTTP from ALB and SSH from Bastion and Ansible Host"
 
   # Allow HTTP traffic from ALB SG
   ingress {
@@ -34,7 +34,6 @@ resource "aws_security_group" "web_sg" {
     protocol        = "tcp"
     security_groups = [aws_security_group.alb_sg.id]
   }
-
   # Allow SSH from Bastion SG
   ingress {
     from_port       = 22
@@ -42,15 +41,12 @@ resource "aws_security_group" "web_sg" {
     protocol        = "tcp"
     security_groups = [aws_security_group.bastion_sg.id]
   }
-
-  # To Allow SSH from Ansible, hardcoding it from the Cloud9 instance public IP
-  ingress {
+  # To Allow SSH from Ansible, hardcoding it from the Cloud9 instance public IP  ingress {
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
     cidr_blocks = ["3.238.200.186/32"]
-  }
-
+  }
   egress {
     from_port   = 0
     to_port     = 0
