@@ -21,14 +21,32 @@ jobs:
           aws-region: us-east-1
         env:
           ACTIONS_STEP_DEBUG: true
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
 
-      - name: Terraform Init
+      # Network Folder Terraform Execution
+      - name: Terraform Init in Network folder
+        working-directory: ./Network
         run: terraform init
 
-      - name: Terraform Plan
+      - name: Terraform Plan in Network folder
+        working-directory: ./Network
         run: terraform plan
 
-      - name: Terraform Apply
+      - name: Terraform Apply in Network folder
+        working-directory: ./Network
+        run: terraform apply -auto-approve
+
+      # Webserver Folder Terraform Execution
+      - name: Terraform Init in Webserver folder
+        working-directory: ./Webserver
+        run: terraform init
+
+      - name: Terraform Plan in Webserver folder
+        working-directory: ./Webserver
+        run: terraform plan
+
+      - name: Terraform Apply in Webserver folder
+        working-directory: ./Webserver
         run: terraform apply -auto-approve
