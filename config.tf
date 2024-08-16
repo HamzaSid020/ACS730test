@@ -10,3 +10,4 @@ terraform {
     region = "us-east-1"                     // Region where bucket created
   }
 }
+ 
