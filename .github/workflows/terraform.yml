@@ -11,19 +11,19 @@ jobs:
         uses: actions/checkout@v3
       - name: Debug Secrets
         run: |
-          if [ -z "${{ env.AWS_ACCESS_KEY_ID }}" ]; then
-            echo "${{ env.AWS_ACCESS_KEY_ID }} is not set."
+          if [ -z "${{ vars.AWS_ACCESS_KEY_ID }}" ]; then
+            echo "${{ vars.AWS_ACCESS_KEY_ID }} is not set."
           else
-            echo "${{ env.AWS_ACCESS_KEY_ID }} is set."
+            echo "${{ vars.AWS_ACCESS_KEY_ID }} is set."
           fi
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-region: us-east-1
         env:
-          AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
-          AWS_SESSION_TOKEN: ${{ env.AWS_SESSION_TOKEN }}
+          AWS_ACCESS_KEY_ID: ${{ vars.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ vars.AWS_SECRET_ACCESS_KEY }}
+          AWS_SESSION_TOKEN: ${{ vars.AWS_SESSION_TOKEN }}
           ACTIONS_STEP_DEBUG: true
       
       - name: Set up Terraform
