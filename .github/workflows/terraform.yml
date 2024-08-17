@@ -12,9 +12,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: "ASIA543FPMNOLMNS2QY6"
-          aws-secret-access-key: "tzJ3UQ+/V6XbWkYStt8ILPqGVW+FSKnMfsTxLjTy"
-          aws-session-token: "IQoJb3JpZ2luX2VjEPr//////////wEaCXVzLXdlc3QtMiJIMEYCIQDm8F1vpAARkLDgsiix4Aq3WMed8tD9s/9b5IDHjw/TMQIhANZBZyTjj4rhk4DBrX2lH0RiALlGJpKpimM/Zujm/rahKrgCCPP//////////wEQABoMOTU1MzA2MTczMjc2Igx6g0Zp2w+rom+rgjgqjAKzSNLSM+C9XQdNvIA02JEJ483/M3G7/E+QHnVDztLbYlQ9awBNMXKXz2r7XIby6QZUIowUfV6klrnGFtWnoAscnJJ9J5AzQeqjVGDEvBJWmtzH2vydu9uY5owdUZKS5U+N6NHoUQO5tYtqSRg5VkEIpfJRaOpKSdwW3JMHHSGVlkzkaSc1GnXm3txgtYVXQ1oss7N1rZRs95AI+NzgVwBWssNvdSrfrkd+yGZUXEa5kBmkyJccCkRaWJuCWKWHk6W6wIF5IaQJgf6uz18htpDYJZzqf/VMGDL9JeqT/EF5e6T1feOy+vRbw4+7sfno73Z+8oQFjau03N5dLVeDGC4TYBHxxoV8FUP2cQJ0MO+o/rUGOpwB+dVNjclELO2Kmqt5vos2QfacW0VTRKernhzpI1TOqi3h3nkrBf2Qp1M7F7C03SuRnYshYVI4m3X/3rDli9NYNZDeX1WiNWrxpMP0FU1EG9Lz/EAWxFgKqEVXuIyZgDKUPTgTXmX0l5FskWbKCNGyhYUzea8r/05JAj+puhFsF3kmSLXOBGX2SbknCOw27Q6YU+scS7EvWQwtxW+/"
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region: us-east-1
         env:
           ACTIONS_STEP_DEBUG: true
