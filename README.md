@@ -1,10 +1,6 @@
 # ACS730_Final-Project
 # Steps to run the files
 
-alias tf = terraform
-tf init
-tf validate
-tf apply --auto-approve
-
-
-tf destroy
+Step 1: Download Network And Webserver folder
+Step 2: Create an S3 bucket
+Step 3: Add this to config.tf and update it
