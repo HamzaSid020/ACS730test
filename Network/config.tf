@@ -1,11 +1,18 @@
 provider "aws" {
   region = "us-east-1"
 }
+variable "bucket_name" {
+  default = "final-dhana-s3"
+}
+
+variable "state_key" {
+  default = "network/terraform.tfstate"
+}
 
 terraform {
   backend "s3" {
-    bucket = "final-dhana-s3"             // Bucket from where to GET Terraform State
-    key    = "network/terraform.tfstate" // Object name in the bucket to GET Terraform State
-    region = "us-east-1"                     // Region where bucket created
+    bucket = var.bucket_name
+    key    = var.state_key
+    region = "us-east-1"
   }
 }
