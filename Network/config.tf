@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1"
 }
 variable "bucket_name" {
-  default = "final-dhana-s3"
+  default = "aws-bucket-dhana"
 }
 
 variable "state_key" {
