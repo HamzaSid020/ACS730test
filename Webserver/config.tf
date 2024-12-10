@@ -2,10 +2,3 @@ provider "aws" {
   region = "us-east-1"
 }
 
-terraform {
-  backend "s3" {
-    bucket = "aws-bucket-dhana"             // Bucket from where to GET Terraform State
-    key    = "webserver/terraform.tfstate" // Object name in the bucket to GET Terraform State
-    region = "us-east-1"                     // Region where bucket created
-  }
-}
