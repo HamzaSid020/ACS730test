@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Tier Web Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4682b4;
+            color: white;
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        img {
+            width: 50%;
+            height: auto;
+            border: 5px solid #4682b4;
+            margin: 20px auto;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        footer {
+            background-color: #4682b4;
+            color: white;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Two-Tier Web Application!</h1>
+        <h2>Powered by a Load Balancer and EC2 Instances</h2>
+    </header>
+
+    <main>
+        <p>This web application demonstrates high availability and load balancing across multiple EC2 instances.</p>
+
+        <!-- Dynamic image served by this EC2 instance -->
+        <img src="image.jpg" alt="Instance-Specific Image">
+
+        <h3>Instance Details</h3>
+        <p><strong>Instance ID:</strong> {{ instance_id }}</p>
+        <p><strong>Hostname:</strong> {{ hostname }}</p>
+
+        <p><strong>Deployed by:</strong> ACS-Project-Team</p>
+        <h3>Team Members</h3>
+        <ul>
+            <li>Member 1: ArpitGupta</li>
+            <li>Member 2: AnkitaMahajan</li>
+            <li>Member 3: Rupesh</li>
+            <li>Member 3: Yashika</li>
+            <li>Member 3: Hamza</li>
+        </ul>
+
+        <h3>Health Check</h3>
+        <p>If you see this page, the Load Balancer is successfully routing traffic to this instance!</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Acs Proejct Team - Two-Tier Web Application Project</p>
+    </footer>
+</body>
+</html>
